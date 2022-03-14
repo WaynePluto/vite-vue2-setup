@@ -1,0 +1,104 @@
+$rpx: math.div(1, 375) * 100vw;
+$vh: math.div(1, 812) * 100vh;
+
+@function px2vw($value) {
+  @return math.div(round($value * $rpx * 100), 100);
+}
+@function px2vh($value) {
+  @return math.div(round($value * $vh * 100), 100);
+}
+body {
+  margin: 0;
+}
+// 去除文字复制
+*:not(input, textarea) {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* 单行省略号，需要宽 */
+
+.single-line {
+  /*超出部分隐藏*/
+  overflow: hidden;
+  /*禁止换行*/
+  white-space: nowrap;
+  /*省略号*/
+  text-overflow: ellipsis;
+}
+
+/* 多行省略号,需要宽和行数*/
+
+.multi-lines {
+  /* 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。*/
+  display: -webkit-box;
+  /* 显示行数 */
+  /* -webkit-line-clamp: 3; */
+  /* 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。*/
+  -webkit-box-orient: vertical;
+  /* 可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。*/
+  text-overflow: ellipsis;
+  /*超出部分隐藏*/
+  overflow: hidden;
+}
+button:active {
+  transform: scale(1.2);
+}
+
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.fixed {
+  position: fixed;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.justify-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+.align-start {
+  display: flex;
+  align-items: flex-start;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.align-end {
+  display: flex;
+  align-items: flex-end;
+}
